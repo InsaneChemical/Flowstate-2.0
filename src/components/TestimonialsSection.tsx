@@ -393,13 +393,18 @@ export function TestimonialsSection() {
                 className="testimonial-card"
                 style={{
                   background:
-                    "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)",
-                  border: `1px solid ${borderColor}`,
+                    activeIndex === index
+                      ? "linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%)"
+                      : "transparent",
+                  border: activeIndex === index ? `1px solid ${borderColor}` : "1px solid transparent",
                   borderRadius: 20,
                   padding: "40px 44px",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                  boxShadow: `0 24px 56px rgba(0,0,0,0.45), 0 0 0 1px ${borderColor}, inset 0 1px 0 rgba(255,255,255,0.06)`,
+                  backdropFilter: activeIndex === index ? "blur(16px)" : "none",
+                  WebkitBackdropFilter: activeIndex === index ? "blur(16px)" : "none",
+                  boxShadow:
+                    activeIndex === index
+                      ? `0 24px 56px rgba(0,0,0,0.45), 0 0 0 1px ${borderColor}, inset 0 1px 0 rgba(255,255,255,0.06)`
+                      : "none",
                   display: "flex",
                   flexDirection: "column",
                   gap: 0,
@@ -551,36 +556,6 @@ export function TestimonialsSection() {
             </motion.div>
           ))}
           </div>{/* end grid overlay */}
-
-          {/* Decorative corner squares */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              bottom: -16,
-              left: -16,
-              width: 64,
-              height: 64,
-              borderRadius: 12,
-              background: "rgba(6,182,212,0.05)",
-              border: "1px solid rgba(6,182,212,0.1)",
-              zIndex: 0,
-            }}
-          />
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              top: -16,
-              right: -16,
-              width: 64,
-              height: 64,
-              borderRadius: 12,
-              background: "rgba(129,140,248,0.05)",
-              border: "1px solid rgba(129,140,248,0.1)",
-              zIndex: 0,
-            }}
-          />
         </motion.div>
       </div>
 

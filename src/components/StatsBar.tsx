@@ -103,7 +103,7 @@ export function StatsBar() {
               className="gradient-text stat-number"
               style={{
                 fontFamily: "var(--font-syne)",
-                fontSize: "clamp(40px, 3.8vw, 56px)",
+                fontSize: "clamp(34px, 3vw, 44px)",
                 fontWeight: 800,
                 letterSpacing: "-0.04em",
                 lineHeight: 1,

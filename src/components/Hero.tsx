@@ -171,7 +171,7 @@ export function Hero() {
       </div>
 
       <style>{`
-        .hero-section { min-height: 100svh; }
+        .hero-section { min-height: min(100svh, 880px); }
         .hero-headline { font-size: clamp(34px, 3vw, 50px); }
         @media (max-width: 900px) {
           .hero-section { min-height: auto; }
