@@ -37,7 +37,7 @@ export function Navbar() {
             alignItems: "center",
             justifyContent: "space-between",
             height: 60,
-            padding: "0 12px 0 20px",
+            padding: "0 20px",
             borderRadius: 100,
             background: "rgba(5,10,20,0.96)",
             border: "1px solid rgba(255,255,255,0.08)",
