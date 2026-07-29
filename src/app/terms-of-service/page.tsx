@@ -33,10 +33,8 @@ const sections = [
           limited to:
         </p>
         <ul style={{ paddingLeft: 20, display: "flex", flexDirection: "column", gap: 10 }}>
-          <li>Social media management and content creation</li>
           <li>Website design and development</li>
-          <li>AI automation and workflow systems</li>
-          <li>AI voice agent development</li>
+          <li>Social media management and content creation</li>
           <li>Web3 and blockchain community management</li>
         </ul>
         <p style={{ marginTop: 16 }}>

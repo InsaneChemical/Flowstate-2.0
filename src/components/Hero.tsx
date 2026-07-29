@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { HeroVisual } from "./HeroVisual";
 import { CalendlyButton } from "./CalendlyButton";
 
-const badges = ["Websites", "Social Media", "AI Automation", "Web3 Communities"];
+const badges = ["Websites", "Social Media", "Web3 Communities"];
 
 
 function reveal(mounted: boolean, delay: number, direction: "up" | "right" = "up") {

@@ -6,7 +6,7 @@ import { PricingSection } from "@/components/PricingSection";
 export const metadata: Metadata = {
   title: "Pricing — Flowstate Media",
   description:
-    "Straightforward, outcome-first pricing for social media management, website design, AI automation, AI voice agents, and Web3 community support.",
+    "Straightforward, outcome-first pricing for website design, social media management, and Web3 community support.",
   alternates: {
     canonical: "/pricing",
   },

@@ -3,18 +3,35 @@ import { motion, useReducedMotion } from "motion/react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { RevealWrapper } from "./ui/RevealWrapper";
 
-const steps = [
+const WHATSAPP_NUMBER = "27690390431";
+const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like to find out more about working with Flowstate Media.")}`;
+
+interface Step {
+  num: string;
+  title: string;
+  text: string;
+  color: string;
+  colorRgb: string;
+  icon: React.ReactNode;
+  link?: string;
+  linkLabel?: string;
+}
+
+const steps: Step[] = [
   {
     num: "01",
-    title: "Book a free call",
-    text: "A 15-minute conversation to understand your business, goals, and biggest growth blockers.",
+    title: "Message us on WhatsApp",
+    text: "Tell us what you need and we'll reply personally — usually within a few hours. No forms, no waiting on hold.",
     color: "#06b6d4",
     colorRgb: "6,182,212",
     icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.6 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.12 4.18 2 2 0 0 1 5.09 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z" />
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path d="M12.017 2.003c-5.505 0-9.977 4.472-9.977 9.977 0 1.76.462 3.48 1.34 4.997L2 22l5.146-1.35a9.955 9.955 0 0 0 4.871 1.24h.004c5.505 0 9.977-4.472 9.977-9.977 0-2.665-1.038-5.171-2.923-7.056a9.913 9.913 0 0 0-7.058-2.854zm0 18.084h-.003a8.28 8.28 0 0 1-4.229-1.16l-.303-.18-3.055.801.815-2.978-.198-.306a8.264 8.264 0 0 1-1.269-4.404c0-4.566 3.716-8.281 8.286-8.281a8.24 8.24 0 0 1 5.858 2.428 8.227 8.227 0 0 1 2.425 5.856c-.002 4.566-3.718 8.224-8.327 8.224z" />
       </svg>
     ),
+    link: whatsappHref,
+    linkLabel: "Chat now",
   },
   {
     num: "02",
@@ -158,6 +175,31 @@ export function NextSteps() {
                 }}>
                   {s.text}
                 </p>
+
+                {s.link && (
+                  <a
+                    href={s.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      marginTop: 16,
+                      fontFamily: "var(--font-dm)",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: s.color,
+                      textDecoration: "none",
+                    }}
+                  >
+                    {s.linkLabel}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </a>
+                )}
               </div>
             </RevealWrapper>
           ))}

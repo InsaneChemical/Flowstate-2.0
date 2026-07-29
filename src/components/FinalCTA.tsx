@@ -316,11 +316,9 @@ export function FinalCTA() {
                   <option value="" disabled>
                     Select an option
                   </option>
-                  <option value="social">Social media management</option>
                   <option value="website">Website design</option>
-                  <option value="automation">AI automation</option>
-                  <option value="voice">AI voice agent</option>
-                  <option value="community">Community management</option>
+                  <option value="social">Social media management</option>
+                  <option value="community">Web3 community management</option>
                   <option value="full">Full growth system</option>
                   <option value="unsure">Not sure — help me figure it out</option>
                 </select>

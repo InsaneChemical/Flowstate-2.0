@@ -68,7 +68,7 @@ const categories: PricingCategory[] = [
       },
       {
         name: "E-Commerce",
-        priceZAR: "From R35,000",
+        priceZAR: "R35,000+",
         priceEUR: "€2,200+",
         priceLabel: "project",
         secondaryZAR: "R2,500",
@@ -138,7 +138,7 @@ const categories: PricingCategory[] = [
       },
       {
         name: "Protocol",
-        priceZAR: "From R30,000",
+        priceZAR: "R30,000+",
         priceEUR: "€1,900+",
         priceLabel: "/mo",
         features: ["10,000+ members", "24/7 coverage & dedicated mod team", "Crisis management & governance support", "Analytics dashboard"],

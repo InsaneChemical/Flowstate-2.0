@@ -107,19 +107,6 @@ const testimonials = [
     url: "https://naturexpressmadeira.pt/",
     variant: "purple" as const,
   },
-  {
-    id: 3,
-    name: "Eclectic Tree",
-    role: "Website & E-commerce",
-    content:
-      "We needed an online storefront to sell our custom, locally sourced crafts, and Flowstate went above and beyond. They assisted with everything from product photos to the full website build, creating a unique storefront that truly reflects our brand and products.",
-    rating: 5,
-    logo: "/clients/eclectic-tree.png",
-    logoBg: "#ffffff",
-    logoPadding: 4,
-    url: "https://eclectictree.co.za/",
-    variant: "cyan" as const,
-  },
 ];
 
 export function TestimonialsSection() {

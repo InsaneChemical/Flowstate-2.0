@@ -24,10 +24,8 @@ export const metadata: Metadata = {
   title,
   description,
   keywords: [
-    "social media management",
     "website design",
-    "AI automation",
-    "AI voice agents",
+    "social media management",
     "Web3 community management",
     "digital agency South Africa",
   ],
@@ -86,10 +84,8 @@ const organizationJsonLd = {
     "https://x.com/flowstatebuilds",
   ],
   serviceType: [
-    "Social Media Management",
     "Website Design",
-    "AI Automation",
-    "AI Voice Agents",
+    "Social Media Management",
     "Web3 Community Support",
   ],
 };

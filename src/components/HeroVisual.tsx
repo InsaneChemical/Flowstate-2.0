@@ -25,44 +25,14 @@ const cards = [
     tagline: "Convert • Capture • Grow",
     metric: "↑ 2.4× CVR",
     color: "#06b6d4",
-    // position: left
-    style: { top: "40%", left: "0%", transform: "translate(0, -50%)" },
-    cx: 88, cy: 238,
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
-  },
-  {
-    id: "automation",
-    label: "AI Automation",
-    tagline: "Automate • Optimize • Scale",
-    metric: "12h/wk saved",
-    color: "#818cf8",
-    // position: right
-    style: { top: "40%", right: "0%", transform: "translate(0, -50%)" },
-    cx: 412, cy: 238,
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="1.5" strokeLinecap="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-      </svg>
-    ),
-  },
-  {
-    id: "voice",
-    label: "AI Voice Agent",
-    tagline: "Answer • Qualify • Convert",
-    metric: "24/7 active",
-    color: "#06b6d4",
     // position: bottom-left
     style: { bottom: "2%", left: "4%", transform: "translate(0, 0)" },
     cx: 120, cy: 440,
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.6 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.12 4.18 2 2 0 0 1 5.09 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z" />
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
   },
