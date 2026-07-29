@@ -12,10 +12,9 @@ const services = [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/#services" },
-  { label: "System", href: "/#showcase" },
-  { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" },
+  { label: "Services", href: "/#services" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export function Footer() {
@@ -185,21 +184,15 @@ export function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12 }}>
               {services.map((s) => (
-                <li key={s}>
-                  <Link
-                    href="/#services"
-                    style={{
-                      fontFamily: "var(--font-dm)",
-                      fontSize: 14,
-                      color: "#6b7d99",
-                      textDecoration: "none",
-                      transition: "color 0.2s",
-                    }}
-                    onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#94a3b8")}
-                    onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#6b7d99")}
-                  >
-                    {s}
-                  </Link>
+                <li
+                  key={s}
+                  style={{
+                    fontFamily: "var(--font-dm)",
+                    fontSize: 14,
+                    color: "#6b7d99",
+                  }}
+                >
+                  {s}
                 </li>
               ))}
             </ul>
