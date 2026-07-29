@@ -401,10 +401,19 @@ export function FinalCTA() {
                 }}
               >
                 Prefer to talk now?{" "}
+                <a
+                  href="https://wa.me/27690390431?text=Hi!%20I%27d%20like%20to%20find%20out%20more%20about%20working%20with%20Flowstate%20Media."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#06b6d4", fontFamily: "var(--font-dm)", fontSize: 13, textDecoration: "underline" }}
+                >
+                  Message us on WhatsApp
+                </a>{" "}
+                or{" "}
                 <CalendlyButton
                   style={{ background: "none", border: "none", padding: "12px 4px", margin: "-12px 0", color: "#06b6d4", fontSize: 13, fontFamily: "var(--font-dm)", cursor: "pointer", textDecoration: "underline" }}
                 >
-                  Book a call directly
+                  book a call directly
                 </CalendlyButton>
               </p>
             </form>

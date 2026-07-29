@@ -115,9 +115,9 @@ export function Hero() {
               ...reveal(mounted, 200),
             }}
           >
-            Flowstate Media helps businesses create better content, launch
-            conversion-focused websites, and automate repetitive work with
-            AI-powered systems.
+            Flowstate Media helps businesses launch conversion-focused
+            websites, create better social content, and grow engaged Web3
+            communities.
           </p>
 
           {/* CTAs */}

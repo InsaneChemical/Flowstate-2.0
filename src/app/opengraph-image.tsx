@@ -91,7 +91,7 @@ export default function OpengraphImage() {
             marginTop: 28,
           }}
         >
-          Websites · Content · Web3 Communities
+          Websites · Social Media · Web3 Communities
         </div>
       </div>
     ),

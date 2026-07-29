@@ -5,7 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const problems = [
   "Posting without a strategy or system",
   "A website that looks good but doesn't convert",
-  "Too much manual work that AI could handle",
+  "An unmoderated community losing trust and members",
 ];
 
 export function ProblemSection() {

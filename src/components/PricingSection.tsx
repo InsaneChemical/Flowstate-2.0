@@ -151,8 +151,7 @@ const categories: PricingCategory[] = [
 function TierCard({ tier, color, categoryLabel }: { tier: Tier; color: string; categoryLabel: string }) {
   const rgb = color === "#06b6d4" ? "6,182,212" : "129,140,248";
 
-  const priceForMessage = tier.priceZAR === "Custom" ? "custom pricing" : `${tier.priceZAR} ${tier.priceLabel}`;
-  const message = `Hi! I'm interested in the ${tier.name} plan (${priceForMessage}) for ${categoryLabel}. Can we chat?`;
+  const message = `Hi! I'm interested in the ${tier.name} plan (${tier.priceZAR} ${tier.priceLabel}) for ${categoryLabel}. Can we chat?`;
 
   return (
     <div

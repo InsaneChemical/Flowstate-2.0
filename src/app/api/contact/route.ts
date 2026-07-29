@@ -24,7 +24,7 @@ export async function POST(req: Request) {
           <tr><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#64748b">Service needed</td><td style="padding:10px 0;border-bottom:1px solid #e2e8f0;color:#0f172a">${need || "—"}</td></tr>
         </table>
         ${message ? `<div style="margin-top:24px"><p style="color:#64748b;margin:0 0 8px;font-size:13px">MESSAGE</p><p style="color:#0f172a;background:#fff;padding:16px;border-radius:8px;border:1px solid #e2e8f0;margin:0;line-height:1.7">${message}</p></div>` : ""}
-        <p style="margin:32px 0 0;font-size:12px;color:#94a3b8">Sent from flowstatemedia.com contact form</p>
+        <p style="margin:32px 0 0;font-size:12px;color:#94a3b8">Sent from flowstatemedia.co.za contact form</p>
       </div>
     `,
   });
