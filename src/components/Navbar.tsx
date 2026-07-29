@@ -7,6 +7,7 @@ import { CalendlyButton } from "./CalendlyButton";
 const links = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -14,6 +15,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const p = pathname === "/" ? "" : "/";
+  const resolveHref = (href: string) => (href.startsWith("/") ? href : `${p}${href}`);
 
   return (
     <>
@@ -64,7 +66,7 @@ export function Navbar() {
             {links.map((l) => (
               <a
                 key={l.href}
-                href={`${p}${l.href}`}
+                href={resolveHref(l.href)}
                 style={{
                   fontFamily: "var(--font-dm)",
                   fontSize: 13,
@@ -158,7 +160,7 @@ export function Navbar() {
           {links.map((l) => (
             <a
               key={l.href}
-              href={`${p}${l.href}`}
+              href={resolveHref(l.href)}
               onClick={() => setOpen(false)}
               style={{
                 fontFamily: "var(--font-syne)",
