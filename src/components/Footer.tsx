@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const services = [
-  "Social Media Management",
   "Website Design",
+  "Social Media Management",
   "AI Automation",
   "AI Voice Agents",
   "Web3 Community Support",

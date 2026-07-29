@@ -8,23 +8,23 @@ const services = [
     color: "#06b6d4",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-        <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-      </svg>
-    ),
-    title: "Social Media Management",
-    text: "Strategic content creation, scheduling, and community management that keeps brands visible and consistent.",
-  },
-  {
-    color: "#06b6d4",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     ),
     title: "Website Design",
     text: "Modern, conversion-focused websites built to turn attention into leads and visitors into customers.",
+  },
+  {
+    color: "#06b6d4",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+        <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+      </svg>
+    ),
+    title: "Social Media Management",
+    text: "Strategic content creation, scheduling, and community management that keeps brands visible and consistent.",
   },
   {
     color: "#818cf8",
