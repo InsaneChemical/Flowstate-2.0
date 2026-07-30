@@ -25,7 +25,7 @@ export default async function OpengraphImage() {
   const [syneExtraBold, dmSansMedium, logoBuffer] = await Promise.all([
     loadGoogleFont("Syne", 800),
     loadGoogleFont("DM Sans", 500),
-    readFile(join(process.cwd(), "public", "logo-icon-clear.png")),
+    readFile(join(process.cwd(), "public", "logo-transparent.png")),
   ]);
   const logoSrc = `data:image/png;base64,${logoBuffer.toString("base64")}`;
 
@@ -79,29 +79,10 @@ export default async function OpengraphImage() {
           ))}
         </div>
 
-        {/* Logo + wordmark */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 14,
-            marginBottom: 24,
-          }}
-        >
+        {/* Logo (icon + wordmark, complete) */}
+        <div style={{ display: "flex", marginBottom: 28 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} width={48} height={48} style={{ display: "flex" }} alt="" />
-          <div
-            style={{
-              display: "flex",
-              fontFamily: "DM Sans",
-              fontSize: 32,
-              fontWeight: 500,
-              color: "#f8fafc",
-              letterSpacing: "0.02em",
-            }}
-          >
-            FLOWSTATE MEDIA
-          </div>
+          <img src={logoSrc} width={216} height={55} style={{ display: "flex" }} alt="" />
         </div>
 
         {/* Headline */}
