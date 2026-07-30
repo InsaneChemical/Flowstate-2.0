@@ -21,39 +21,6 @@ async function loadGoogleFont(family: string, weight: number) {
 
 const badges = ["Website Design", "Social Media", "Web3 Communities"];
 
-const sideCards = [
-  {
-    label: "Website",
-    tagline: "Convert • Capture • Grow",
-    metric: "↑ 2.4× CVR",
-    color: "#06b6d4",
-    colorRgb: "6,182,212",
-    side: "left" as const,
-    top: 96,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
-  },
-  {
-    label: "Community",
-    tagline: "Support • Moderate • Engage",
-    metric: "5k+ members",
-    color: "#818cf8",
-    colorRgb: "129,140,248",
-    side: "right" as const,
-    top: 96,
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" strokeWidth="1.5" strokeLinecap="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      </svg>
-    ),
-  },
-];
-
 export default async function OpengraphImage() {
   const [syneExtraBold, dmSansMedium, logoBuffer] = await Promise.all([
     loadGoogleFont("Syne", 800),
@@ -85,85 +52,18 @@ export default async function OpengraphImage() {
             inset: 0,
             display: "flex",
             background:
-              "radial-gradient(ellipse 60% 60% at 50% 45%, transparent 0%, #050a14 75%)",
+              "radial-gradient(ellipse 70% 70% at 50% 45%, transparent 0%, #050a14 75%)",
           }}
         />
 
-        {/* Floating service cards, echoing the hero visual */}
-        {sideCards.map((card) => (
-          <div
-            key={card.label}
-            style={{
-              position: "absolute",
-              [card.side]: 50,
-              top: card.top,
-              display: "flex",
-              flexDirection: "column",
-              width: 168,
-              padding: 14,
-              borderRadius: 14,
-              background: `rgba(${card.colorRgb},0.05)`,
-              border: `1px solid rgba(${card.colorRgb},0.22)`,
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-              <div
-                style={{
-                  display: "flex",
-                  width: 30,
-                  height: 30,
-                  borderRadius: 8,
-                  background: `rgba(${card.colorRgb},0.12)`,
-                  border: `1px solid rgba(${card.colorRgb},0.25)`,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {card.icon}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  fontFamily: "Syne",
-                  fontSize: 15,
-                  color: "#e2e8f0",
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {card.label}
-              </div>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                fontFamily: "DM Sans",
-                fontSize: 12,
-                color: "#94a3b8",
-                marginBottom: 10,
-              }}
-            >
-              {card.tagline}
-            </div>
-            <div
-              style={{
-                display: "flex",
-                fontFamily: "DM Sans",
-                fontSize: 12,
-                fontWeight: 500,
-                color: card.color,
-                padding: "3px 10px",
-                borderRadius: 100,
-                background: `rgba(${card.colorRgb},0.12)`,
-                alignSelf: "flex-start",
-              }}
-            >
-              {card.metric}
-            </div>
-          </div>
-        ))}
+        {/* Logo, anchored top-left */}
+        <div style={{ display: "flex", position: "absolute", top: 48, left: 56 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={188} height={48} style={{ display: "flex" }} alt="" />
+        </div>
 
         {/* Badge row */}
-        <div style={{ display: "flex", gap: 10, marginBottom: 32 }}>
+        <div style={{ display: "flex", gap: 10, marginBottom: 28 }}>
           {badges.map((b) => (
             <div
               key={b}
@@ -185,18 +85,12 @@ export default async function OpengraphImage() {
           ))}
         </div>
 
-        {/* Logo (icon + wordmark, complete) */}
-        <div style={{ display: "flex", marginBottom: 28 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logoSrc} width={216} height={55} style={{ display: "flex" }} alt="" />
-        </div>
-
         {/* Headline */}
         <div
           style={{
             display: "flex",
             fontFamily: "Syne",
-            fontSize: 66,
+            fontSize: 76,
             fontWeight: 800,
             letterSpacing: "-0.03em",
             color: "#f8fafc",
@@ -209,7 +103,7 @@ export default async function OpengraphImage() {
           style={{
             display: "flex",
             fontFamily: "Syne",
-            fontSize: 66,
+            fontSize: 76,
             fontWeight: 800,
             letterSpacing: "-0.03em",
             backgroundImage: "linear-gradient(135deg, #06b6d4 0%, #818cf8 100%)",
