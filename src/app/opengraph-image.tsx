@@ -1,9 +1,34 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+async function loadGoogleFont(family: string, weight: number) {
+  const css = await (
+    await fetch(
+      `https://fonts.googleapis.com/css2?family=${encodeURIComponent(family)}:wght@${weight}`
+    )
+  ).text();
+  const match = css.match(/src: url\(([^)]+)\) format\('(?:opentype|truetype)'\)/);
+  if (match) {
+    const res = await fetch(match[1]);
+    if (res.ok) return res.arrayBuffer();
+  }
+  throw new Error(`Failed to load font: ${family} ${weight}`);
+}
+
+const badges = ["Website Design", "Social Media", "Web3 Communities"];
+
+export default async function OpengraphImage() {
+  const [syneExtraBold, dmSansMedium, logoBuffer] = await Promise.all([
+    loadGoogleFont("Syne", 800),
+    loadGoogleFont("DM Sans", 500),
+    readFile(join(process.cwd(), "public", "logo-icon-clear.png")),
+  ]);
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -27,45 +52,68 @@ export default function OpengraphImage() {
             inset: 0,
             display: "flex",
             background:
-              "radial-gradient(ellipse 70% 70% at 50% 50%, transparent 0%, #050a14 75%)",
+              "radial-gradient(ellipse 70% 70% at 50% 45%, transparent 0%, #050a14 75%)",
           }}
         />
+
+        {/* Badge row */}
+        <div style={{ display: "flex", gap: 10, marginBottom: 32 }}>
+          {badges.map((b) => (
+            <div
+              key={b}
+              style={{
+                display: "flex",
+                fontFamily: "DM Sans",
+                fontSize: 18,
+                fontWeight: 500,
+                color: "#67e8f9",
+                padding: "8px 18px",
+                borderRadius: 100,
+                background: "rgba(6,182,212,0.08)",
+                border: "1.5px solid rgba(6,182,212,0.3)",
+                letterSpacing: "0.02em",
+              }}
+            >
+              {b}
+            </div>
+          ))}
+        </div>
+
+        {/* Logo + wordmark */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 16,
-            marginBottom: 28,
+            gap: 14,
+            marginBottom: 24,
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={48} height={48} style={{ display: "flex" }} alt="" />
           <div
             style={{
               display: "flex",
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "linear-gradient(135deg, #06b6d4 0%, #818cf8 100%)",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              fontSize: 40,
-              fontWeight: 700,
+              fontFamily: "DM Sans",
+              fontSize: 32,
+              fontWeight: 500,
               color: "#f8fafc",
-              letterSpacing: "-0.02em",
+              letterSpacing: "0.02em",
             }}
           >
             FLOWSTATE MEDIA
           </div>
         </div>
+
+        {/* Headline */}
         <div
           style={{
             display: "flex",
-            fontSize: 72,
+            fontFamily: "Syne",
+            fontSize: 76,
             fontWeight: 800,
             letterSpacing: "-0.03em",
             color: "#f8fafc",
+            lineHeight: 1.05,
           }}
         >
           Smarter media.
@@ -73,28 +121,26 @@ export default function OpengraphImage() {
         <div
           style={{
             display: "flex",
-            fontSize: 72,
+            fontFamily: "Syne",
+            fontSize: 76,
             fontWeight: 800,
             letterSpacing: "-0.03em",
             backgroundImage: "linear-gradient(135deg, #06b6d4 0%, #818cf8 100%)",
             backgroundClip: "text",
             color: "transparent",
+            lineHeight: 1.05,
           }}
         >
           Smoother growth.
         </div>
-        <div
-          style={{
-            display: "flex",
-            fontSize: 26,
-            color: "#94a3b8",
-            marginTop: 28,
-          }}
-        >
-          Websites · Social Media · Web3 Communities
-        </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        { name: "Syne", data: syneExtraBold, weight: 800, style: "normal" },
+        { name: "DM Sans", data: dmSansMedium, weight: 500, style: "normal" },
+      ],
+    }
   );
 }
