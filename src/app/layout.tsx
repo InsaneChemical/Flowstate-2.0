@@ -69,11 +69,15 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#organization`,
   name: "Flowstate Media",
   url: siteUrl,
   logo: `${siteUrl}/logo-transparent.png`,
+  image: `${siteUrl}/logo-transparent.png`,
   description,
   email: "nuno@flowstatemedia.co.za",
+  telephone: "+27690390431",
+  priceRange: "R6,500–R35,000+",
   address: {
     "@type": "PostalAddress",
     addressCountry: "ZA",
